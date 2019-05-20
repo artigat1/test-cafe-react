@@ -1,0 +1,24 @@
+.Search {
+    margin-top: .75em;
+    border: 1px #efefef solid;
+    padding: 1em;
+    box-sizing: border-box;
+    width: 500px;
+}
+
+.Search input {
+    padding: .75em;
+    box-sizing: border-box;
+    width: 250px;
+}
+
+.Search ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Search li {
+    list-style: none;
+    color: #61dafb;
+}
