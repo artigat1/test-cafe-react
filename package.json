@@ -11,7 +11,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "e2e:chrome": "testcafe chrome tests/ --app \"npm run start\""
   },
   "eslintConfig": {
     "extends": "react-app"
