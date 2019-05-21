@@ -27,5 +27,5 @@ test('Expect 3 results when typing "skywalker', async t => {
     await page.typeQuery('skywalker');
     await page.results.with({visibilityCheck: true});
 
-    await t.expect(page.results.count).eql(31);
+    await t.expect(page.results.count).eql(3);
 });
