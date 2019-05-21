@@ -10,6 +10,8 @@
     },
     "devDependencies": {
         "@ffmpeg-installer/ffmpeg": "^1.0.17",
+        "cucumber": "^5.1.0",
+        "gherkin-testcafe": "^2.2.0",
         "testcafe": "^1.1.4",
         "testcafe-reporter-xunit": "^2.1.0"
     },
@@ -21,7 +23,10 @@
         "e2e:watch": "testcafe \"chrome:headless\" tests/pages/ -L --app \"npm run start\"",
         "e2e:chrome": "testcafe \"chrome:headless\" tests/pages/ --app \"npm run start\" --screenshots ./screenshots --screenshots-on-fails --video videos --video-options singleFile=true,failedOnly=true",
         "e2e:firefox": "testcafe \"firefox\" tests/pages/ --app \"npm run start\" --screenshots ./screenshots --screenshots-on-fails --video videos --video-options singleFile=true,failedOnly=true",
-        "e2e:ci": "testcafe \"chrome:headless\" tests/pages/ --app \"npm run start\" --screenshots /tmp/screenshots --screenshots-on-fails --video /tmp/videos --video-options singleFile=true,failedOnly=true -r xunit:/tmp/test-results/res.xml"
+        "e2e:ci": "testcafe \"chrome:headless\" tests/pages/ --app \"npm run start\" --screenshots /tmp/screenshots --screenshots-on-fails --video /tmp/videos --video-options singleFile=true,failedOnly=true -r xunit:/tmp/test-results/res.xml",
+        "bdd:watch": "gherkin-testcafe \"chrome:headless\" tests/bdd/**/*.js tests/bdd/**/*.feature -L --app \"npm run start\"",
+        "bdd:ci": "gherkin-testcafe \"chrome:headless\" tests/bdd/**/*.js tests/bdd/**/*.feature --app \"npm run start\" --screenshots /tmp/screenshots --screenshots-on-fails --video /tmp/videos --video-options singleFile=true,failedOnly=true -r xunit:/tmp/test-results/res.xml",
+        "bdd:chrome": "gherkin-testcafe \"chrome\" tests/bdd/**/*.js tests/bdd/**/*.feature --app \"npm run start\" --screenshots ./screenshots --screenshots-on-fails --video videos --video-options singleFile=true,failedOnly=true"
     },
     "eslintConfig": {
         "extends": "react-app"
