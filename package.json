@@ -21,7 +21,7 @@
         "e2e:watch": "testcafe \"chrome:headless\" tests/pages/ -L --app \"npm run start\"",
         "e2e:chrome": "testcafe \"chrome:headless\" tests/pages/ --app \"npm run start\" --screenshots ./screenshots --screenshots-on-fails --video videos --video-options singleFile=true,failedOnly=true",
         "e2e:firefox": "testcafe \"firefox\" tests/pages/ --app \"npm run start\" --screenshots ./screenshots --screenshots-on-fails --video videos --video-options singleFile=true,failedOnly=true",
-        "e2e:ci": "testcafe \"chrome:headless\" tests/pages/ --app \"npm run start\" --screenshots ./screenshots --screenshots-on-fails --video videos --video-options singleFile=true,failedOnly=true -r xunit:/tmp/test-results/res.xml"
+        "e2e:ci": "testcafe \"chrome:headless\" tests/pages/ --app \"npm run start\" --screenshots /tmp/screenshots --screenshots-on-fails --video /tmp/videos --video-options singleFile=true,failedOnly=true -r xunit:/tmp/test-results/res.xml"
     },
     "eslintConfig": {
         "extends": "react-app"
