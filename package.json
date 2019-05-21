@@ -1,39 +1,41 @@
 {
-  "name": "test-cafe-react",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "axios": "^0.18.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "e2e:watch": "testcafe \"chrome\" tests/pages/ -L --app \"npm run start\"",
-    "e2e:chrome": "testcafe \"chrome:headless\" tests/pages/ --app \"npm run start\" --screenshots ./screenshots --screenshots-on-fails --video videos --video-options singleFile=true,failedOnly=true",
-    "e2e:firefox": "testcafe \"firefox\" tests/pages/ --app \"npm run start\" --screenshots ./screenshots --screenshots-on-fails --video videos --video-options singleFile=true,failedOnly=true"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@ffmpeg-installer/ffmpeg": "^1.0.17",
-    "testcafe": "^1.1.4"
-  }
+    "name": "test-cafe-react",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "axios": "^0.18.0",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-scripts": "3.0.1"
+    },
+    "devDependencies": {
+        "@ffmpeg-installer/ffmpeg": "^1.0.17",
+        "testcafe": "^1.1.4",
+        "testcafe-reporter-xunit": "^2.1.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "e2e:watch": "testcafe \"chrome:headless\" tests/pages/ -L --app \"npm run start\"",
+        "e2e:chrome": "testcafe \"chrome:headless\" tests/pages/ --app \"npm run start\" --screenshots ./screenshots --screenshots-on-fails --video videos --video-options singleFile=true,failedOnly=true",
+        "e2e:firefox": "testcafe \"firefox\" tests/pages/ --app \"npm run start\" --screenshots ./screenshots --screenshots-on-fails --video videos --video-options singleFile=true,failedOnly=true",
+        "e2e:ci": "testcafe \"chrome:headless\" tests/pages/ --app \"npm run start\" --screenshots ./screenshots --screenshots-on-fails --video videos --video-options singleFile=true,failedOnly=true -r xunit:/tmp/test-results/res.xml"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
 }
